@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Formulario de Acceso</title>    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Videojuegos & Desarrollo">
+    <meta name="description" content="Ejemplo de formulario de acceso basado en HTML5 y CSS">
+    <meta name="keywords" content="login, formulario de acceso html">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="css/login.css">
+    <style type="text/css">
+    </style>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById("loginform").addEventListener("submit", function(event) {
+                event.preventDefault(); // Evita el envío del formulario por defecto
+                
+                // Obtiene los valores del formulario
+                var usuario = document.getElementById("usuario").value;
+                var password = document.getElementById("password").value;
+                
+                // Verifica las credenciales
+                if (usuario === "mtto_planta" && password === "_1nf0rm3s$") {
+                    window.location.href = "HTML/contenido.html"; // Redirigir a la página de contenido
+                } else {
+                    alert("Usuario o contraseña incorrectos"); // Muestra mensaje de acceso incorrecto
+                }
+            });
+        };
+    </script>
+</head>
+<body>
+    <div id="contenedor">
+        <div id="contenedorcentrado">
+            <div id="login">
+                <form id="loginform">
+                    <label for="usuario">Usuario</label>
+                    <input id="usuario" type="text" name="usuario" placeholder="Usuario" required>
+                    
+                    <label for="password">Contraseña</label>
+                    <input id="password" type="password" placeholder="Contraseña" name="password" required>
+                    
+                    <button type="submit" title="Ingresar" name="Ingresar">Acceder</button>
+                </form>
+            </div>
+            <div id="derecho">
+                <div class="titulo">
+                    Mantenimiento Planta <br>
+                    Antioquia Gold LTD.
+                </div>
+                <hr>
+                <div class="pie-form">
+                    <img src="https://github.com/SoporteTI-AGD/LogoAGD/blob/main/AGD.png?raw=true" alt="Logo AGD">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
